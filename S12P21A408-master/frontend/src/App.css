@@ -1,0 +1,141 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import 'tailwindcss';
+
+:root {
+  /* 메인 블루 컬러 계열 */
+  --main-color: #007be5;
+  --main-light: #3f9aea;
+  --main-lighter: #86beee;
+  --main-lightest: #dff0fd;
+
+  /* 그레이 계열 (CED3DA 기반) */
+  --gray-color: #ced3da;
+  --gray-light: #dee2e7;
+  --gray-lighter: #ebeef2;
+  --gray-lightest: #f7f9fc;
+
+  /* 텍스트 컬러 */
+  --text-dark: #2c3e50;
+  --text-medium: #5a6a7e;
+  --text-light: #8f9cac;
+
+  /* 배경 및 구조 컬러 */
+  --bg-light: #f7f9fc;
+  --bg-medium: #f0f3f8;
+  --border-color: #e1e6ee;
+  --shadow-color: rgba(0, 123, 229, 0.15);
+
+  /* 액센트 및 상태 컬러 */
+  --accent-color: #f05a5a;
+  --success-color: #4ecba0;
+  --warning-color: #f7b84b;
+  --alert-color: #ec535a;
+
+  /* 카테고리 구분용 추가 컬러 */
+  --category-1: #3ac0d9;
+  --category-2: #967aea;
+  --category-3: #53cb7a;
+  --category-4: #f0996c;
+}
+
+body {
+  background-color: var(--bg-light);
+  margin: 0;
+  padding: 0;
+  font-family:
+    'Pretendard',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-dark);
+}
+
+#root {
+  background-color: var(--gray-lightest);
+  min-height: 100vh;
+}
+
+.app {
+  background-color: var(--gray-lightest);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex-grow: 1;
+  background-color: var(--gray-lightest);
+  padding: 0 30px 30px;
+}
+
+/* Ensure full-width page layouts */
+.page-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-light);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--bg-light);
+  font-size: 18px;
+  color: var(--text-medium);
+}
+
+/* Add a subtle pattern background */
+.app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(222, 232, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(222, 232, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Add animation for loading elements */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Add responsive padding */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0 15px 15px;
+  }
+}

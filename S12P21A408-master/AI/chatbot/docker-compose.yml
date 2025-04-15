@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  ai-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai
+    image: ai-service # 명시 안 해도 됨
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    volumes:
+      - ./google_keys.json:/app/google_keys.json:ro # ✅ 런타임에만 마운트 (읽기 전용)
+      - ./env/.env:/app/.env:ro # ✅ 필요 시 .env도 마운트 가능
+    networks:
+      - proxy_network
+
+networks:
+  proxy_network:
+    external: true
+# test

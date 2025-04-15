@@ -1,0 +1,184 @@
+/* custom.css */
+h1 {
+  font-size: 2.3rem;
+  font-weight: bolder;
+  font-family:
+    'Pretendard Variable',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bolder;
+  font-family:
+    'Pretendard Variable',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family:
+    'Pretendard Variable',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family:
+    'Pretendard Variable',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+}
+
+p {
+  font-size: 1rem;
+  font-family:
+    'Pretendard Variable',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+}
+
+/* 하이라이트 텍스트 박스 */
+.highlight-box {
+  position: relative;
+  display: flex;
+  /* border-radius: 8px; */
+  /* border: 1px solid #e2e8f0; */
+  background-color: #ffffff;
+  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06); */
+  margin-bottom: 1rem;
+}
+
+.highlight-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  /* border-radius: 4px 0 0 4px; */
+}
+
+.highlight-content-wrapper {
+  padding: 0.9rem 1.2rem 0.9rem 1.2rem;
+  flex: 1;
+  position: relative;
+}
+
+.highlight-content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.ellipsis-button {
+  position: absolute;
+  top: 8px;
+  right: 4px;
+  background: none;
+  border: none;
+  color: #a0aec0;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.highlight-content-wrapper:hover .ellipsis-button {
+  opacity: 1;
+}
+
+.ellipsis:hover {
+  color: #000000;
+}
+
+/* 메모 카드 */
+.memo-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.memo-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.memo-add-button {
+  margin-top: 0.5rem;
+  background-color: #edf2f7;
+  color: #4c51bf;
+  padding: 6px 14px;
+  font-size: 0.875rem;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s;
+}
+
+.memo-add-button:hover {
+  background-color: #e0e7ff;
+}
+
+.context-menu {
+  position: absolute;
+  top: 28px;
+  right: 4px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+  overflow: hidden;
+}
+
+.context-menu-item {
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  color: #2d3748;
+  background: white;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.context-menu-item:hover {
+  background-color: #f1f5f9;
+}

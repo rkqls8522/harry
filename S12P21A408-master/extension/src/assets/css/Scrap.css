@@ -1,0 +1,17 @@
+.button-primary {
+  background-color: #007be5;
+  color: white;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.button-primary:hover {
+  background-color: #005bb5; /* hover 시 더 어두운 색상 */
+  transform: scale(1.05); /* hover 시 약간 확대 효과 */
+}
+
+.button-primary:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

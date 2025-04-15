@@ -1,0 +1,131 @@
+/* src/components/ScheduleDetail/ScheduleDetail.css */
+.schedule-detail {
+  width: 100%;
+  max-width: 500px;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.detail-title {
+  font-size: 1.25rem;
+  color: #1f2937;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #3b82f6;
+}
+
+.detail-content {
+  background-color: #f9fafb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-content p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #1f2937;
+  word-break: break-word;
+}
+
+.detail-info {
+  margin-bottom: 1.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.info-group {
+  display: flex;
+  margin-bottom: 0.75rem;
+}
+
+.info-label {
+  flex-basis: 30%;
+  color: #4b5563;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.info-value {
+  flex-grow: 1;
+  font-weight: 400;
+  color: #1f2937;
+  font-size: 0.875rem;
+}
+
+.detail-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.edit-btn,
+.delete-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 0.875rem;
+}
+
+.edit-btn {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #2563eb;
+}
+
+.delete-btn {
+  background-color: #f3f4f6;
+  color: #dc2626;
+  border: 1px solid #e5e7eb;
+}
+
+.delete-btn:hover {
+  background-color: #fee2e2;
+}
+
+.edit-btn:disabled,
+.delete-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 480px) {
+  .schedule-detail {
+    padding: 1rem;
+  }
+
+  .info-group {
+    flex-direction: column;
+  }
+
+  .info-label {
+    margin-bottom: 0.25rem;
+  }
+
+  .detail-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    width: 100%;
+  }
+}

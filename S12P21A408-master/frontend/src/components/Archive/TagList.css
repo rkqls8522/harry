@@ -1,0 +1,41 @@
+.tag-item {
+  display: flex;
+  flex-direction: row; /* ← 중요: 아이콘 옆에 텍스트 정렬 */
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.2rem;
+  padding: 0.75rem 1rem;
+  margin: 0 1.4rem 0 0.5rem;
+  font-size: 0.875rem;
+  color: #191919;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 7px;
+  background-color: transparent;
+}
+
+.tag-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.tag-item:hover {
+  background-color: #edf2f7; /* light gray */
+}
+
+.tag-item.active {
+  background-color: #007be5; /* purplish */
+  color: white;
+  font-weight: 600;
+}
+
+.tag-group {
+  padding: 1rem 0.75rem 0rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #9a9a9a; /* gray-400 */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}

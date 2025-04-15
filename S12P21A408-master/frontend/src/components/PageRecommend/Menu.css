@@ -1,0 +1,137 @@
+/* Menu.css - 현대적인 필 스타일 메뉴 */
+.menu-nav {
+  flex: 1;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 스크롤바 스타일링 */
+.menu-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.menu-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.menu-list::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.menu-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.menu-item {
+  margin: 0;
+}
+
+/* .menu-link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #4b5563;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  height: 100%;
+}
+
+.menu-link:hover {
+  background-color: rgba(177, 208, 255, 0.3);
+}
+
+.menu-link.active {
+  background-color: #81b1ff;
+  color: white;
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.1);
+} */
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 왼쪽-오른쪽 정렬 */
+  padding: 0.5rem 1rem;
+  color: #4a5568;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.menu-link:hover {
+  background-color: #f7fafc;
+  color: #3182ce;
+}
+
+.menu-link.active {
+  border-left: 2px solid #3182ce;
+  background-color: #ebf8ff;
+  color: #3182ce;
+}
+
+.left-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-grow: 3;
+}
+
+.tag-list {
+  justify-content: center; /* 수평 가운데 정렬 */
+}
+
+.tag-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 세로 중앙 정렬 */
+}
+
+/* 삭제 버튼 */
+.tag-item .delete-btn {
+  display: inline-flex;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #888;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  max-width: 24px; /* 최대 너비 제한 추가 */
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tag-item.active .delete-btn {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.delete-btn:hover {
+  color: #899;
+  background-color: rgba(136, 153, 153, 0.1);
+}
+
+/* 아이콘 숨기기 */
+.menu-icon {
+  display: none;
+}
+
+.menu-label {
+  font-size: 0.875rem;
+}

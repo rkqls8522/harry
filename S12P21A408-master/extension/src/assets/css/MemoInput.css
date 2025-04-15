@@ -1,0 +1,61 @@
+.memo-input-wrapper {
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.memo-input {
+  width: 100%;
+  font-size: 0.95rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  padding: 6px 12px; /* ↓ 얇게 */
+  background-color: #f8fafc;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.memo-input:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.3);
+}
+
+.memo-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.memo-btn {
+  font-size: 0.875rem;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+}
+
+.memo-btn.cancel {
+  background-color: #e2e8f0;
+  color: #2d3748;
+}
+
+.memo-btn.cancel:hover {
+  background-color: #cbd5e0;
+}
+
+.memo-btn.save {
+  background-color: #3182ce;
+  color: white;
+}
+
+.memo-btn.save:hover {
+  background-color: #2b6cb0;
+}

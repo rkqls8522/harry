@@ -1,0 +1,69 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKER_IMAGE_NAME = "backend-service"
+        CONTAINER_NAME = "backend"
+
+        // Jenkins Credentials 불러오기
+        DB_URL = credentials('DB_URL')
+        DB_USER = credentials('DB_USER')
+        DB_PASSWORD = credentials('DB_PASSWORD')
+        GOOGLE_CLIENT_ID = credentials('GOOGLE_CLIENT_ID')
+        GOOGLE_CLIENT_SECRET = credentials('GOOGLE_CLIENT_SECRET')
+    }
+
+    stages {
+        stage('Git Clone') {
+            steps {
+                git (
+                    credentialsId: 'gitlab_token',
+                    branch: 'develop-be',
+                    url: 'https://lab.ssafy.com/s12-bigdata-recom-sub1/S12P21A408.git'
+                )
+            }
+        }
+
+        stage('Build Spring Boot') {
+            steps {
+                dir('backend') {
+                    sh 'chmod +x ./gradlew'
+                    sh './gradlew clean bootJar'
+                }
+            }
+        }
+
+        stage('Deploy with Docker Compose') {
+            steps {
+                dir('backend') {
+                    // 🔽 .env 파일 생성 먼저
+                    sh '''
+                    echo "DB_URL=${DB_URL}" > .env
+                    echo "DB_USER=${DB_USER}" >> .env
+                    echo "DB_PASSWORD=${DB_PASSWORD}" >> .env
+                    echo "NOSQL_URI=${NOSQL_URI}" >> .env
+                    echo "GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}" >> .env
+                    echo "GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}" >> .env
+                    '''
+
+                    // 🔽 기존 컨테이너/이미지 정리 + 배포
+                    sh '''
+                    docker compose down
+                    docker rmi -f backend || true
+                    docker compose up -d --build
+                    docker system prune -f || true
+                    '''
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "✅ 배포 성공!"
+        }
+        failure {
+            echo "❌ 배포 실패!"
+        }
+    }
+}

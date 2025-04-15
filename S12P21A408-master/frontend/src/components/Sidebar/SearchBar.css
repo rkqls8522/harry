@@ -1,0 +1,31 @@
+.search-bar {
+  padding: 0.5rem;
+  /* border-bottom: 1px solid #f0f0f0; */
+}
+
+.search-input-wrapper {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem 0.5rem 0.5rem 2rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border: 1px solid #aec9ff;
+  box-shadow: 0 0 0 2.5px #aec9ff66; /* 더 두껍고 선명한 외곽선 */
+}

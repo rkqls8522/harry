@@ -1,0 +1,25 @@
+/* 검색창이 나타날 때 */
+.search-bar-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.search-bar-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 300ms,
+    transform 300ms;
+}
+
+/* 검색창이 사라질 때 */
+.search-bar-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.search-bar-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    opacity 300ms,
+    transform 300ms;
+}
